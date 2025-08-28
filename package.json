@@ -1,0 +1,35 @@
+{
+  "name": "health-monitoring-app",
+  "version": "1.0.0",
+  "description": "A sample web application with health monitoring for CI/CD pipeline demonstration",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "jest --coverage",
+    "test:integration": "jest --testMatch='**/integration/**/*.test.js'",
+    "lint": "eslint src/",
+    "security": "npm audit",
+    "build": "echo 'Build completed successfully'"
+  },
+  "keywords": ["nodejs", "express", "health-check", "ci-cd", "monitoring"],
+  "author": "DevOps Engineer",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "prometheus-client": "^1.0.1",
+    "node-cron": "^3.0.2"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1",
+    "supertest": "^6.3.3",
+    "nodemon": "^3.0.1",
+    "eslint": "^8.45.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
