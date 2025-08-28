@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --prefer-offline --no-audit
+RUN npm install --prefer-offline --no-audit
 
 # Copy source code
 COPY . .
@@ -28,22 +28,18 @@ COPY --from=builder /app/build /usr/share/nginx/html
 # Copy Nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Create nginx user
-RUN addgroup -g 1001 -S nginx && \
-    adduser -S nginx -u 1001 -G nginx
+# Use existing nginx user from base image
 
-# Set proper permissions
-RUN chown -R nginx:nginx /usr/share/nginx/html /var/cache/nginx /var/run /var/log/nginx
-
-# Switch to non-root user
-USER nginx
+# Set proper permissions  
+RUN chown -R nginx:nginx /usr/share/nginx/html && \
+    chmod -R 755 /usr/share/nginx/html
 
 # Expose port
 EXPOSE 80
 
 # Add health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
-    CMD curl -f http://localhost:80 || exit 1
+    CMD curl -f http://localhost:80/health || exit 1
 
-# Start Nginx
+# Start Nginx as root (needed for port 80)
 CMD ["nginx", "-g", "daemon off;"]

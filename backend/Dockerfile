@@ -1,16 +1,4 @@
-# Multi-stage build for optimized production image
-FROM node:18-alpine AS builder
-
-# Set working directory
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-
-# Install dependencies
-RUN npm ci --only=production && npm cache clean --force
-
-# Production stage
+# Simple single-stage build for demo
 FROM node:18-alpine AS production
 
 # Install system dependencies
@@ -23,8 +11,7 @@ RUN addgroup -g 1001 -S nodejs && \
 # Set working directory
 WORKDIR /app
 
-# Copy dependencies from builder stage
-COPY --from=builder /app/node_modules ./node_modules
+# Copy all application files
 COPY --chown=nodejs:nodejs . .
 
 # Create necessary directories
