@@ -5,6 +5,17 @@ A comprehensive real-time CI/CD pipeline monitoring and alerting system that col
 
 This system demonstrates modern DevOps practices with AI-assisted development, providing a complete monitoring solution for Jenkins pipelines with advanced visualization and alerting capabilities.
 
+## ✅ System Status
+**🎉 FULLY OPERATIONAL** - All 8 microservices running successfully:
+- ✅ Backend API (Port 3001) - Healthy
+- ✅ Frontend Dashboard (Port 3000) - Healthy  
+- ✅ Nginx Load Balancer (Port 80/443) - Healthy
+- ✅ Grafana Monitoring (Port 3003) - Running
+- ✅ Prometheus Metrics (Port 9090) - Running
+- ✅ MongoDB Database (Port 27017) - Healthy
+- ✅ Redis Cache (Port 6379) - Healthy
+- ✅ Sample Health App (Port 3002) - Running
+
 ## ✨ Key Features
 
 ### 📊 Real-time Metrics Collection
@@ -49,8 +60,8 @@ Application → Build → Test → Security Scan → Deploy → Health Check →
 
 ### 1. Clone Repository
 ```bash
-git clone <repository-url>
-cd cicd-monitoring-system
+git clone https://github.com/arpitzn/CI-CD-Jenkins-Pipeline-HealthCheck.git
+cd CI-CD-Jenkins-Pipeline-HealthCheck
 ```
 
 ### 2. Environment Configuration
