@@ -160,12 +160,26 @@ npm run test:integration
 
 ## 🎓 Academic Context
 
+### Assignment 2: CI/CD Pipeline Health Dashboard
 This project was created as part of DevOps engineering coursework to demonstrate:
 - Modern CI/CD pipeline implementation
 - Real-time monitoring and alerting systems
 - Containerized microservices architecture
 - AI-assisted software development
 - Industry best practices and patterns
+
+### Assignment 3: Cloud Deployment with Infrastructure as Code
+Extended to include:
+- **Infrastructure as Code**: Terraform-based AWS deployment
+- **Cloud Architecture**: Production-ready multi-service deployment
+- **AI-Native Development**: 95%+ AI-generated infrastructure code
+- **Security**: VPC, security groups, encrypted storage
+- **Scalability**: Load balancing and managed services
+
+📋 **Assignment 3 Deliverables:**
+- [Infrastructure Code](infra/) - Complete Terraform AWS deployment
+- [Deployment Guide](deployment.md) - Step-by-step cloud deployment
+- [AI Workflow Documentation](prompts.md) - AI prompts and development process
 
 ---
 

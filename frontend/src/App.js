@@ -162,9 +162,9 @@ function App() {
               <div className="service-name">📈 Prometheus</div>
               <div className="service-url">localhost:9090</div>
             </a>
-            <a href="http://localhost:3001" target="_blank" rel="noopener noreferrer" className="service-link">
+            <a href="http://localhost:3003" target="_blank" rel="noopener noreferrer" className="service-link">
               <div className="service-name">📊 Grafana</div>
-              <div className="service-url">localhost:3001</div>
+              <div className="service-url">localhost:3003</div>
             </a>
           </div>
         </div>
